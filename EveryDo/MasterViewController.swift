@@ -43,20 +43,44 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     let alert = UIAlertController(title: "Add a To Do", message: nil, preferredStyle: .alert)
     
-    let newtoDo = Todo(context: context)
-         
-    // If appropriate, configure the new managed object.
-//    newtoDo.timestamp = Date()
-
-    // Save the context.
-    do {
+    var titleAlertTextField: UITextField!
+    var toDoDescriptionAlertTextField: UITextField!
+    var priorityAlertTextField: UITextField!
+    
+    alert.addTextField{ (textField: UITextField) in
+      titleAlertTextField = textField
+    }
+    
+    alert.addTextField{ (textField: UITextField) in
+      toDoDescriptionAlertTextField = textField
+    }
+    
+    alert.addTextField{ (textField: UITextField) in
+      priorityAlertTextField = textField
+    }
+    
+    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction) in
+      print("title is \(String(describing: titleAlertTextField.text))")
+      print("description is \(String(describing: toDoDescriptionAlertTextField.text))")
+      
+      //create new managed object using useer input values
+      let newtoDo = Todo(context: context)
+      newtoDo.title = titleAlertTextField.text
+      newtoDo.todoDescription = toDoDescriptionAlertTextField.text
+      newtoDo.priorityNumber = Int16(priorityAlertTextField.text!)!
+      
+      do {
         try context.save()
-    } catch {
+      } catch {
         // Replace this implementation with code to handle the error appropriately.
         // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
         let nserror = error as NSError
         fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-    }
+      }
+    }))
+    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction) in
+    }))
+    present(alert, animated: true, completion: nil)
   }
 
   // MARK: - Segues
@@ -136,7 +160,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
       fetchRequest.fetchBatchSize = 20
       
       // Edit the sort key as appropriate.
-      let sortDescriptor = NSSortDescriptor(key: "timestamp", ascending: false)
+      let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
     
       fetchRequest.sortDescriptors = [sortDescriptor]
     
