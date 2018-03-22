@@ -10,15 +10,26 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-  @IBOutlet weak var detailDescriptionLabel: UILabel!
+  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var detailLabel: UILabel!
+  @IBOutlet weak var priorityLabel: UILabel!
 
+  var detailItem: Todo? {
+    
+    didSet {
+      
+      // Update the view.
+      configureView()
+    }
+  }
 
   func configureView() {
     // Update the user interface for the detail item.
-    if let detail = detailItem {
-        if let label = detailDescriptionLabel {
-//            label.text = detail.timestamp!.description
-        }
+    
+    if let unwDetailItem = detailItem, let _ = titleLabel, let _ = detailLabel, let _ = priorityLabel {
+      self.titleLabel.text = unwDetailItem.title!
+      self.detailLabel.text = unwDetailItem.todoDescription!
+      self.priorityLabel.text = "Priority: " + String(unwDetailItem.priorityNumber)
     }
   }
 
@@ -28,18 +39,12 @@ class DetailViewController: UIViewController {
     configureView()
   }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
+//  override func didReceiveMemoryWarning() {
+//    super.didReceiveMemoryWarning()
+//    // Dispose of any resources that can be recreated.
+//  }
 
-  var detailItem: Todo? {
-    didSet {
-        // Update the view.
-        configureView()
-    }
-  }
-
+  
 
 }
 

@@ -48,14 +48,19 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     var priorityAlertTextField: UITextField!
     
     alert.addTextField{ (textField: UITextField) in
+      textField.placeholder = UserDefaults.standard.string(forKey: "TitleKey")
+//      defaults.integer(forKey: "Age")
+      
       titleAlertTextField = textField
     }
     
     alert.addTextField{ (textField: UITextField) in
+      textField.placeholder = UserDefaults.standard.string(forKey: "DescKey")
       toDoDescriptionAlertTextField = textField
     }
     
     alert.addTextField{ (textField: UITextField) in
+      textField.placeholder = UserDefaults.standard.string(forKey: "PriorityKey")
       priorityAlertTextField = textField
     }
     
