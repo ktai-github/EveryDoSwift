@@ -39,18 +39,22 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
   @objc
   func insertNewObject(_ sender: Any) {
+    
+    //manifestation of core data
     let context = self.fetchedResultsController.managedObjectContext
     
+    //alert window
     let alert = UIAlertController(title: "Add a To Do", message: nil, preferredStyle: .alert)
     
+    //text fields for alert window
     var titleAlertTextField: UITextField!
     var toDoDescriptionAlertTextField: UITextField!
     var priorityAlertTextField: UITextField!
     
+    //add text fields to alert window
+    //use defaults for placeholder text
     alert.addTextField{ (textField: UITextField) in
       textField.placeholder = UserDefaults.standard.string(forKey: "TitleKey")
-//      defaults.integer(forKey: "Age")
-      
       titleAlertTextField = textField
     }
     
@@ -64,7 +68,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
       priorityAlertTextField = textField
     }
     
-    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction) in
+    // alert window add button
+    alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { (action: UIAlertAction) in
       print("title is \(String(describing: titleAlertTextField.text))")
       print("description is \(String(describing: toDoDescriptionAlertTextField.text))")
       
@@ -74,6 +79,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
       newtoDo.todoDescription = toDoDescriptionAlertTextField.text
       newtoDo.priorityNumber = Int16(priorityAlertTextField.text!)!
       
+      //save to core data
       do {
         try context.save()
       } catch {
@@ -83,8 +89,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
       }
     }))
+    
+    //cancel button
     alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction) in
     }))
+    
+    //show alert window with objects specified above
     present(alert, animated: true, completion: nil)
   }
 
@@ -123,6 +133,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     guard let toDoDescription = toDo.todoDescription else {
       return cell
     }
+    
+    //combine description and priority in one text label
     cell.detailLabel.text = toDoDescription + ". Priority " + String(toDo.priorityNumber)
     return cell
   }

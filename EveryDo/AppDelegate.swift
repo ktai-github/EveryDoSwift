@@ -17,18 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Register the preference defaults early.
+    //default values for adding a new to do item
     let defaults = UserDefaults.standard
     defaults.set("Enter Title", forKey: "TitleKey")
     defaults.set("Enter Desc", forKey: "DescKey")
     defaults.set("Enter '0' for low, '1' for high", forKey: "PriorityKey")
     print(defaults)
 
-    //    NSDictionary *appDefaults = [NSDictionary
-//
-//      dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"CacheDataAgressively"];
-//
-//    [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
-    
     // Override point for customization after application launch.
     let splitViewController = self.window!.rootViewController as! UISplitViewController
     let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
