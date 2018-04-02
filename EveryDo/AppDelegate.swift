@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     //default values for adding a new to do item
     let defaults = UserDefaults.standard
     defaults.set("Enter Title", forKey: "TitleKey")
-    defaults.set("Enter Desc", forKey: "DescKey")
-    defaults.set("Enter '0' for low, '1' for high", forKey: "PriorityKey")
+    defaults.set("Enter Description", forKey: "DescKey")
+    defaults.set("Enter 1,2,3 for high, med, low", forKey: "PriorityKey")
     print(defaults)
 
     // Override point for customization after application launch.

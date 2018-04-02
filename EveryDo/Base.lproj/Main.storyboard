@@ -36,34 +36,44 @@
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sbz-EL-0TY">
                                 <rect key="frame" x="20" y="78" width="335" height="21"/>
+                                <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Priority" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw" userLabel="Priority">
                                 <rect key="frame" x="20" y="175" width="335" height="21"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0L-zc-jKh">
                                 <rect key="frame" x="20" y="107" width="335" height="15"/>
+                                <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Icon made by Roundicons from www.flaticon.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zk-zF-u56">
+                                <rect key="frame" x="-1" y="626" width="377" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="h0L-zc-jKh" secondAttribute="trailing" constant="20" id="5QL-HW-kBq"/>
                             <constraint firstItem="Sbz-EL-0TY" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="14" id="AnS-G5-ihJ"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="20" id="E1f-2F-hQ6"/>
                             <constraint firstItem="h0L-zc-jKh" firstAttribute="top" secondItem="Sbz-EL-0TY" secondAttribute="bottom" constant="8" id="UbN-NR-cKV"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="bottom" secondItem="2Zk-zF-u56" secondAttribute="bottom" constant="20" id="VYB-Kx-3B1"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="top" secondItem="h0L-zc-jKh" secondAttribute="bottom" constant="53" id="beZ-Tu-eYG"/>
                             <constraint firstItem="h0L-zc-jKh" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="20" id="eN6-1A-eYB"/>
                             <constraint firstItem="Sbz-EL-0TY" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="20" id="ggp-UZ-A0S"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" id="n70-SG-FCL"/>
+                            <constraint firstItem="2Zk-zF-u56" firstAttribute="centerX" secondItem="VUw-jc-0yf" secondAttribute="centerX" id="sv3-JO-Cpl"/>
                             <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="Sbz-EL-0TY" secondAttribute="trailing" constant="20" id="ywg-FR-Yz3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VUw-jc-0yf"/>
@@ -101,7 +111,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Arm-wq-HPj" detailTextLabel="RPA-5G-upJ" rowHeight="55" style="IBUITableViewCellStyleSubtitle" id="WCw-Qf-5nD" customClass="ToDoTableViewCell" customModule="EveryDo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="55"/>
@@ -126,7 +136,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="detailLabel" destination="RPA-5G-upJ" id="65B-PR-ClU"/>
                                     <outlet property="titleLabel" destination="Arm-wq-HPj" id="AtT-0O-H0a"/>
